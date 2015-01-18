@@ -77,7 +77,7 @@ class RaspiAddressList:
             addrtypes = set()
             for address in host.get('addresses'):
                 addrtypes.add(address.get('addrtype'))
-                if 'raspberry' in address.get('vendor', '').lower():
+                if 'raspberry pi foundation' in address.get('vendor', '').lower():
                     is_pi = True
             if is_pi and 'ipv4' in addrtypes:
                 pi_hosts.append(host)
@@ -105,6 +105,7 @@ if __name__ == '__main__':
         kwargs = args.__dict__
         app = RaspiAddressList( **kwargs )
         for ipv4, mac in app.get_mac_ipv4_tuples(app.pi_hosts):
+            # TODO: What about a Pi that has WiFi and Ethernet connected? When there will be 2 ipv4s and 2 macs
             print "%s\t%s" % ( ipv4 or '', mac or '' )
 
     except Exception as e:
