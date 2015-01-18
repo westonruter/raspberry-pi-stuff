@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# parse-diskutil-plist
-# Copyright (C) 2013  Weston Ruter
+# raspi-diskutil
+# Copyright (C) 2015  Weston Ruter
 # Weston Ruter (@westonruter)
 #
 # This program is free software; you can redistribute it and/or
