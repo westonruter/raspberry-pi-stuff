@@ -11,7 +11,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 if [ ! -e /usr/local/bin/wifi-reboot ]; then
-	echo -n "#!/usr/bin/bash\nifdown wlan0\nifup wlan0" > /usr/local/bin/wifi-reboot
+	echo -e "ifdown wlan0\nifup wlan0" > /usr/local/bin/wifi-reboot
 	chmod +x /usr/local/bin/wifi-reboot
 	echo "Added /usr/local/bin/wifi-reboot"
 fi
