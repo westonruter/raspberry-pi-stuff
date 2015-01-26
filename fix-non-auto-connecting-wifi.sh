@@ -13,8 +13,12 @@ fi
 if [ ! -e /usr/local/bin/wifi-reboot ]; then
 	echo -n "#!/usr/bin/bash\nifdown wlan0\nifup wlan0" > /usr/local/bin/wifi-reboot
 	chmod +x /usr/local/bin/wifi-reboot
+	echo "Added /usr/local/bin/wifi-reboot"
 fi
 
 if ! grep -q 'wifi-reboot' /etc/network/interfaces; then
 	echo "post-up /usr/local/bin/wifi-reboot" >> /etc/network/interfaces
+	echo "Added post-up command"
 fi
+
+echo "Done"
