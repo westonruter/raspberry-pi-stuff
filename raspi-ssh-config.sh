@@ -22,8 +22,9 @@ while read -r ip mac; do
     echo "RECOMMENDED: Reserve $ip for MAC $mac in your router, though beware of switching between Ethernet and WiFi"
     echo "If done, then add the following to your ~/.ssh/config:"
     echo "Host $pi_hostname"
-    echo "Hostname $ip  # MAC: $mac"
+    echo "Hostname $ip"
     echo "User pi"
     echo "ForwardAgent yes"
-    
+    echo "# MAC: $mac"
+
 done < <(python raspi-address-list.py)
