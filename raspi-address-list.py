@@ -77,7 +77,7 @@ class RaspiAddressList:
             addrtypes = set()
             for address in host.get('addresses'):
                 addrtypes.add(address.get('addrtype'))
-                if 'raspberry pi foundation' in address.get('vendor', '').lower():
+                if 'raspberry pi foundation' in address.get('vendor', '').lower() or 'lifetron' in address.get('vendor', '').lower():
                     is_pi = True
             if is_pi and 'ipv4' in addrtypes:
                 pi_hosts.append(host)
